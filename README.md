@@ -3,6 +3,7 @@
 ![Status](https://img.shields.io/badge/Status-Prototype-green)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 https://github.com/Steener99/Chainforge.git
+ChainForge_XP_+.png.
 ## 🖼️ Dashboard Preview
 
 > Simulated XP Dashboard featuring Market Tracker, Missions, Wallet Preview & Team Feedback.
