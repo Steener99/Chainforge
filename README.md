@@ -1,5 +1,8 @@
 # Chainforge
-https://github.com/your-username/chainforge
+![HTML](https://img.shields.io/badge/Built%20With-HTML%2FCSS%2FJS-blue)
+![Status](https://img.shields.io/badge/Status-Prototype-green)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+https://github.com/Steener99/Chainforge.git
 # Re-creating the README.md and LICENSE files after code execution reset
 from pathlib import Path
 
@@ -98,3 +101,29 @@ No installation or build tools required
 
 For investor access, demos, or questions:
 📧 Tanner Steen – dennydimension@gmail.com
+## 🖼️ Screenshots
+
+![Dashboard Preview](./assets/chainforge-dashboard.png)
+> Live XP tracker + wallet preview + mission cards
+> ![HTML](https://img.shields.io/badge/Built%20With-HTML%2FCSS%2FJS-blue)
+![Status](https://img.shields.io/badge/Status-Prototype-green)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+> ## 🤝 Contributing
+
+We welcome ideas, UX feedback, and crypto visionaries to help evolve ChainForge.
+
+📬 Reach out via issues, or connect directly if you're interested in joining the forge.
+# ChainForge
+
+[Badges]
+
+## 🧬 What is ChainForge?
+## 🌐 Live Demo
+## 🧱 Architecture
+## 📁 Structure
+## 🖼️ Screenshots
+## 🧠 Creators
+## 🔮 Roadmap
+## 🤝 Contributing
+## 📊 For Investors
+## ⚖ License
