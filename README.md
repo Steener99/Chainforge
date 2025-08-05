@@ -8,8 +8,7 @@ from pathlib import Path
 
 > ChainForge XP Dashboard, Simulated Wallet, and Market Feedback Preview
 
-![Dashboard Preview](./assets/chainforge-dashboard.png)
-readme_content = """# ChainForge
+![Dashboard Preview](./assets/chainforge-
 
 🔗 **ChainForge** is an XP-driven crypto intelligence dashboard that empowers users with:
 - Real-time market task tracking
@@ -131,3 +130,6 @@ We welcome ideas, UX feedback, and crypto visionaries to help evolve ChainForge.
 ## 📊 For Investors
 ## ⚖ License
 
+## ⚖ License
+
+This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
