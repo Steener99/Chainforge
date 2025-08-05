@@ -3,9 +3,12 @@
 ![Status](https://img.shields.io/badge/Status-Prototype-green)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 https://github.com/Steener99/Chainforge.git
-# Re-creating the README.md and LICENSE files after code execution reset
 from pathlib import Path
+## 🖼️ Screenshots
 
+> ChainForge XP Dashboard, Simulated Wallet, and Market Feedback Preview
+
+![Dashboard Preview](./assets/chainforge-dashboard.png)
 readme_content = """# ChainForge
 
 🔗 **ChainForge** is an XP-driven crypto intelligence dashboard that empowers users with:
@@ -127,3 +130,4 @@ We welcome ideas, UX feedback, and crypto visionaries to help evolve ChainForge.
 ## 🤝 Contributing
 ## 📊 For Investors
 ## ⚖ License
+
