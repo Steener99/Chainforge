@@ -1,4 +1,60 @@
+<h1>
+  <img src="path-to-your-logo/logo.png" alt="Platform Logo" width="50" height="50">
+  ChainForge: Team XP + Market Dashboard
+</h1>
 
+<div class="section">
+  <h2>
+    <img src="path-to-your-image/market-tracker.png" alt="Market Tracker XP" width="30" height="30">
+    Market Tracker XP
+  </h2>
+  <div class="card">
+    <strong>Task:</strong> Logged in during BTC +4% spike
+    <span class="badge">+25 XP</span><br>
+    <em>Status:</em> Complete ✅
+  </div>
+  <div class="card">
+    <strong>Task:</strong> Suggested sell zone for $AVAX at $26
+    <span class="badge">+40 XP</span><br>
+    <em>Status:</em> Confirmed +7.3% gain
+  </div>
+  <div class="graph-placeholder">[BTC Price vs XP Gained Graph]</div>
+</div>
+
+<div class="section">
+  <h2>
+    <img src="path-to-your-image/insight-mission.png" alt="Insight and Missions" width="30" height="30">
+    Insight & Missions
+  </h2>
+  <div class="card">
+    <strong>Task:</strong> Posted thread: “What Hashrate Teaches Us”
+    <span class="badge">+15 XP</span><br>
+    <em>Status:</em> 3 teammates viewed, 1 bookmarked
+  </div>
+  <div class="card task-incomplete">
+    <strong>Weekly Mission:</strong> Share 1 low-cap altcoin under $30M MC
+    <span class="badge">Pending</span><br>
+    <em>Due:</em> Sunday
+  </div>
+</div>
+
+<div class="section">
+  <h2>
+    <img src="path-to-your-image/team-feedback.png" alt="Team Feedback and Watchlist" width="30" height="30">
+    Team Feedback & Watchlist
+  </h2>
+  <div class="card">
+    <strong>Altcoin Watch:</strong> $KAS — Suggested by ChainMaster21
+    <span class="badge">4 votes</span><br>
+    <em>Sentiment:</em> “Innovative PoW potential”<br>
+    <em>Target:</em> 15% gain suggested. Watchlist status: <strong>Active</strong>
+  </div>
+  <div class="card">
+    <strong>Timing Journal:</strong> Sold $INJ at $30.5
+    <br><em>Outcome:</em> Price dropped to $27.8 — ✔️ Good call
+  </div>
+  <div class="graph-placeholder">[Team XP Split by Member / Category]</div>
+</div>
 <h1>🔗 ChainForge: Team XP + Market Dashboard</h1>
 
 
