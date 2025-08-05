@@ -83,3 +83,18 @@ Future phases will introduce:
 
 Just open `index.html` in any browser.
 No installation or build tools required
+## 🧠 Creators
+
+- **Tanner Dawson Steen** – Vision, design, implementation
+- (More to be added as team expands)
+- ## 🔮 Coming Soon
+
+- $CHAIN Token Simulation & Reward System
+- ForgeChest Leaderboards
+- Team Strategy Missions
+- Altcoin & Sell-Zone Suggestion Tools
+- Smart Contract Integration
+- ## 📬 Contact
+
+For investor access, demos, or questions:
+📧 Tanner Steen – dennydimension@gmail.com
