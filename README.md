@@ -3,12 +3,18 @@
 ![Status](https://img.shields.io/badge/Status-Prototype-green)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 https://github.com/Steener99/Chainforge.git
+## 🖼️ Dashboard Preview
+
+> Simulated XP Dashboard featuring Market Tracker, Missions, Wallet Preview & Team Feedback.
+
+![ChainForge Dashboard](./ChainForge_XP_+.png)
+![ChainForge Dashboard](./chainforge-dashboard.png)
+
 from pathlib import Path
 ## 🖼️ Screenshots
 
 > ChainForge XP Dashboard, Simulated Wallet, and Market Feedback Preview
 
-![Dashboard Preview](./assets/chainforge-
 
 🔗 **ChainForge** is an XP-driven crypto intelligence dashboard that empowers users with:
 - Real-time market task tracking
