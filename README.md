@@ -59,3 +59,27 @@ readme_path.write_text(readme_content)
 license_path.write_text(license_content)
 
 [readme_path.name, license_path.name]
+## 🧬 What is ChainForge?
+
+ChainForge is a crypto intelligence dashboard that gamifies blockchain analysis.
+
+It rewards user activity with XP, tracks team performance, and simulates wallet interactions — transforming market strategy into an engaging, forge-like experience.
+ 🌐 Live Demo
+
+➡️ [Launch the ChainForge Dashboard](https://your-netlify-site.netlify.app)
+
+> Simulated environment: XP tracker, wallet UI, and live graphs.
+> ## 🧱 Architecture
+
+- **Frontend:** Pure HTML + CSS + JavaScript (Chart.js)
+- **Hosting:** Netlify (single-page static app)
+- **No backend yet:** All data is simulated
+
+Future phases will introduce:
+- Wallet APIs
+- XP history DB
+- Token integration
+## 🧪 Run Locally
+
+Just open `index.html` in any browser.
+No installation or build tools required
