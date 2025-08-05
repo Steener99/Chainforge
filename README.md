@@ -3,7 +3,8 @@
 
 ![ChainForge Logo](./chainforge-logo.png)
 ![HTML](https://img.shields.io/badge/Built%20With-HTML%2FCSS%2FJS-blue)
-![Status](https://img.shields.io/badge/Status-Prototype-green)
+![Status]
+(https://img.shields.io/badge/Status-Prototype-green)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 https://github.com/Steener99/Chainforge.git
 
@@ -144,6 +145,20 @@ We welcome ideas, UX feedback, and crypto visionaries to help evolve ChainForge.
 ## 📊 For Investors
 ## ⚖ License
 
-## ⚖ License
+from pathlib import Path
+from PIL import Image
+import shutil
 
+# Redefine paths after code reset
+src_path = "/mnt/data/A_branding_image_for_ChainForge_XP_Intelligence_Da.png"
+dst_path = "/mnt/data/chainforge-logo.png"
+
+# Copy file for GitHub-friendly name
+shutil.copy(src_path, dst_path)
+
+# Return path to user
+dst_path
+## 🔗 ChainForge Logo
+
+![ChainForge Logo](./chainforge-logo.png)
 This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
