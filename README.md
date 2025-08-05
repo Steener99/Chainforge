@@ -1,20 +1,7 @@
 
 <h1>🔗 ChainForge: Team XP + Market Dashboard</h1>
 
-<div class="section">
-  <h2>📈 Market Tracker XP</h2>
-  <div class="card">
-    <strong>Task:</strong> Logged in during BTC +4% spike
-    <span class="badge">+25 XP</span><br>
-    <em>Status:</em> Complete ✅
-  </div>
-  <div class="card">
-    <strong>Task:</strong> Suggested sell zone for $AVAX at $26
-    <span class="badge">+40 XP</span><br>
-    <em>Status:</em> Confirmed +7.3% gain
-  </div>
-  <div class="graph-placeholder">[BTC Price vs XP Gained Graph]</div>
-</div>
+
 
 <div class="section">
   <h2>🧠 Insight & Missions</h2>
