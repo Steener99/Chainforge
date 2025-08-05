@@ -1,3 +1,4 @@
+![Chainforge Logo](https://example.com/path-to-your-logo.png)
 <h1>
   <img src="path-to-your-logo/logo.png" alt="Platform Logo" width="50" height="50">
   ChainForge: Team XP + Market Dashboard
