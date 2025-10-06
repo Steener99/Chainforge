@@ -249,6 +249,41 @@ No installation or build tools required
 - Team Strategy Missions
 - Altcoin & Sell-Zone Suggestion Tools
 - Smart Contract Integration
+# ⚒️ ChainForge: Hybrid Forge HUD Dashboard
+
+**Version:** v1.4 — *Combat Fusion + HUD Integration*  
+**Author:** Breaklayer Innovations (T. Steen)  
+**Deployment Target:** Netlify  
+**Framework:** Next.js 14 + Firebase + WalletConnect
+
+---
+
+## 🔥 Overview
+
+ChainForge is an immersive, blockchain-inspired **forging simulation dashboard** that merges live data visualization, gamified XP mechanics, and atmospheric ambient design into one seamless experience.
+
+This build represents the **Hybrid Forge Chamber**, where the **Combat HUD** integrates with the **Forge Dashboard**, symbolizing progress, rank, and blockchain connection through a glowing, reactive user interface.
+
+---
+
+## 🧱 Tech Stack
+
+- **Next.js 14** – Framework for hybrid rendering and component-based UI.
+- **React 18** – Core frontend library.
+- **Firebase Auth & Firestore** – Secure authentication and user data handling.
+- **WalletConnect / MetaMask** – Wallet simulation + integration layer.
+- **Node.js 18+** – Required for local dev + build.
+- **Netlify Plugin for Next.js** – Handles automatic builds and routing.
+
+---
+
+## ⚙️ Setup Guide
+
+### 1. Clone & Install
+```bash
+git clone https://github.com/<your-repo>/chainforge-dashboard.git
+cd chainforge-dashboard
+npm install
 - ## 📬 Contact
 
 For investor access, demos, or questions:
@@ -256,44 +291,4 @@ For investor access, demos, or questions:
 ## 🖼️ Screenshots
 
 ![Dashboard Preview](./assets/chainforge-dashboard.png)
-> Live XP tracker + wallet preview + mission cards
-> ![HTML](https://img.shields.io/badge/Built%20With-HTML%2FCSS%2FJS-blue)
-![Status](https://img.shields.io/badge/Status-Prototype-green)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
-> ## 🤝 Contributing
-
-We welcome ideas, UX feedback, and crypto visionaries to help evolve ChainForge.
-
-📬 Reach out via issues, or connect directly if you're interested in joining the forge.
-# ChainForge
-
-[Badges]
-
-## 🧬 What is ChainForge?
-## 🌐 Live Demo
-## 🧱 Architecture
-## 📁 Structure
-## 🖼️ Screenshots
-## 🧠 Creators
-## 🔮 Roadmap
-## 🤝 Contributing
-## 📊 For Investors
-## ⚖ License
-
-from pathlib import Path
-from PIL import Image
-import shutil
-
-# Redefine paths after code reset
-src_path = "/mnt/data/A_branding_image_for_ChainForge_XP_Intelligence_Da.png"
-dst_path = "/mnt/data/chainforge-logo.png"
-
-# Copy file for GitHub-friendly name
-shutil.copy(src_path, dst_path)
-
-# Return path to user
-dst_path
-## 🔗 ChainForge Logo
-
-![ChainForge Logo](./chainforge-logo.png)
-This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
+> Live 
