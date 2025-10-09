@@ -1,35 +1,125 @@
-# ⚒️ ChainForge: Hybrid Forge HUD Dashboard
+# ⚙️ ChainForge v4 — *Living Relics + Forge of Wisdom*
 
-**Version:** v1.4 — *Combat Fusion + HUD Integration*  
-**Author:** Breaklayer Innovations (T. Steen)  
-**Deployment Target:** Netlify  
-**Framework:** Next.js 14 + Firebase + WalletConnect
+> *“Every flame remembers its source.”*
 
----
-
-## 🔥 Overview
-
-ChainForge is an immersive, blockchain-inspired **forging simulation dashboard** that merges live data visualization, gamified XP mechanics, and atmospheric ambient design into one seamless experience.
-
-This build represents the **Hybrid Forge Chamber**, where the **Combat HUD** integrates with the **Forge Dashboard**, symbolizing progress, rank, and blockchain connection through a glowing, reactive user interface.
+ChainForge v4 introduces **dynamic NFT relics** whose form and value evolve through player actions.  
+Each quest, decision, or pulse inside the Forge alters on-chain metadata, powered by $CHAIN economy.
 
 ---
 
-## 🧱 Tech Stack
-
-- **Next.js 14** – Framework for hybrid rendering and component-based UI.
-- **React 18** – Core frontend library.
-- **Firebase Auth & Firestore** – Secure authentication and user data handling.
-- **WalletConnect / MetaMask** – Wallet simulation + integration layer.
-- **Node.js 18+** – Required for local dev + build.
-- **Netlify Plugin for Next.js** – Handles automatic builds and routing.
+### 🚀 Features
+- 🧭 **Forge of Wisdom Cinematic** → autoplays on launch  
+- 💠 **Living Relics System** — NFTs gain XP, attunement, and visual tiers  
+- 🔗 **Polygon Amoy Integration** (low-gas testnet)  
+- 🪙 **$CHAIN Economy** — stake, burn, and reward loops  
+- 🧠 **Memory Core** — tracks Light / Neutral / Dark resonance  
+- 🖥️ **React HUD** with Bonding Panel + Forge Heart metrics  
 
 ---
 
-## ⚙️ Setup Guide
+### 🧩 Stack
+| Layer | Tech |
+|:--|:--|
+| Contracts | Solidity + EIP-4906 |
+| Backend | Fastify + Prisma + PostgreSQL |
+| Worker | TypeScript heartbeat processor |
+| Front-end | React + Vite |
+| Network | Polygon Amoy |
+| Infra | Docker + Redis + Postgres |
 
-### 1. Clone & Install
+---
+
+### ⚙️ Local Setup
 ```bash
-git clone https://github.com/<your-repo>/chainforge-dashboard.git
-cd chainforge-dashboard
-npm install
+docker compose up -d
+cd apps/api && cp .env.example .env
+pnpm i && pnpm prisma:dev && pnpm dev
+cd ../worker && pnpm i && pnpm dev
+cd ../web && pnpm i && pnpm dev
+pnpm run assets:fetch
+
+DATABASE_URL=postgresql://chainforge:chainforge@localhost:5432/chainforge?schema=public
+POLYGON_AMOY_RPC=https://polygon-amoy.g.alchemy.com/v2/<key>
+PRIVATE_KEY=0x<backendSigner>
+CHAIN_TOKEN_ADDRESS=0x000000000000000000000000000000000000dEaD
+RELICS1155_ADDRESS=0x000000000000000000000000000000000000f011
+
+bash scripts/deploy.sh
+
+---
+
+## ⚙️ 2. Deployment Script (`scripts/deploy.sh`)
+
+```bash
+#!/usr/bin/env bash
+set -e
+echo "🔥 Deploying ChainForge API + Worker + Web"
+
+# Variables
+APP_NAME="chainforge-v4"
+PORT=8080
+IMAGE="chainforge/api:latest"
+
+# 1️⃣ Build containers
+docker build -t $IMAGE -f apps/api/Dockerfile .
+docker build -t chainforge/worker:latest -f apps/worker/Dockerfile .
+
+# 2️⃣ Push or run locally
+if [ "$1" == "--local" ]; then
+  docker compose up -d
+  echo "💠 Local forge running → http://localhost:$PORT"
+else
+  echo "⚙️ Deploying to Render-style platform..."
+  render.yaml <<EOF
+services:
+  - type: web
+    name: ${APP_NAME}-api
+    env: docker
+    plan: free
+    dockerfilePath: apps/api/Dockerfile
+  - type: worker
+    name: ${APP_NAME}-worker
+    env: docker
+    dockerfilePath: apps/worker/Dockerfile
+EOF
+  echo "✅ Render spec generated → render.yaml"
+fi
+
+---
+
+## ⚙️ 2. Deployment Script (`scripts/deploy.sh`)
+
+```bash
+#!/usr/bin/env bash
+set -e
+echo "🔥 Deploying ChainForge API + Worker + Web"
+
+# Variables
+APP_NAME="chainforge-v4"
+PORT=8080
+IMAGE="chainforge/api:latest"
+
+# 1️⃣ Build containers
+docker build -t $IMAGE -f apps/api/Dockerfile .
+docker build -t chainforge/worker:latest -f apps/worker/Dockerfile .
+
+# 2️⃣ Push or run locally
+if [ "$1" == "--local" ]; then
+  docker compose up -d
+  echo "💠 Local forge running → http://localhost:$PORT"
+else
+  echo "⚙️ Deploying to Render-style platform..."
+  render.yaml <<EOF
+services:
+  - type: web
+    name: ${APP_NAME}-api
+    env: docker
+    plan: free
+    dockerfilePath: apps/api/Dockerfile
+  - type: worker
+    name: ${APP_NAME}-worker
+    env: docker
+    dockerfilePath: apps/worker/Dockerfile
+EOF
+  echo "✅ Render spec generated → render.yaml"
+fi
