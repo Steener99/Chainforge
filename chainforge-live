@@ -5,4 +5,114 @@ git remote add origin https://github.com/<yourusername>/chainforge-live.git
 git add .
 git commit -m "Initial ChainForge live deploy"
 git branch -M main
-git push -u origin main
+git push -u origin main<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ChainForge Admin</title>
+  <style>
+    body{background:#0B0C10;color:#E6E6E6;font-family:Inter,system-ui,Arial,sans-serif;margin:0;display:flex;min-height:100vh;align-items:center;justify-content:center}
+    .card{background:#13141A;border:1px solid #1E2130;border-radius:14px;padding:24px;max-width:520px;width:92%}
+    .muted{color:#9aa0ad} .btn{padding:10px 14px;border-radius:10px;border:1px solid #2b2f42;background:#22242E;color:#fff;cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,#00E5FF,#00FFA3);border:none;color:#061018;font-weight:800}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>ChainForge Admin</h2>
+    <p class="muted">Sign in with Google. Only allow-listed emails may proceed.</p>
+    <p id="state" class="muted">Status: Not signed in</p>
+    <div style="display:flex;gap:8px;margin:10px 0">
+      <button id="googleBtn" class="btn primary">Sign in with Google</button>
+      <button id="signOutBtn" class="btn">Sign out</button>
+    </div>
+    <div id="notAllowed" class="muted" style="display:none">You are signed in but not authorized for admin.</div>
+    <div id="links" style="display:none;margin-top:10px">
+      <p>Go to:</p>
+      <ul>
+        <li><a id="linkOverview"   href="#" target="_blank">Firebase Console — Overview</a></li>
+        <li><a id="linkAuth"       href="#" target="_blank">Firebase Console — Authentication</a></li>
+        <li><a id="linkFirestore"  href="#" target="_blank">Firebase Console — Firestore</a></li>
+        <li><a id="linkHosting"    href="#" target="_blank">Firebase Console — Hosting</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Firebase (v11) modules -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+    // 1) FILL THIS IN (your Web App config: Firebase Console → Project settings → Your apps → Web)
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    // 2) EDIT THESE (who’s allowed)
+    const ALLOWLIST = [
+      "you@yourdomain.com",
+      "cto@yourdomain.com",
+      "founder@gmail.com"
+    ];
+
+    // 3) YOUR PROJECT ID (used to build deep links into Console)
+    const PROJECT_ID = "YOUR_PROJECT_ID";
+
+    // --- Init
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    // UI
+    const elState = document.getElementById('state');
+    const elNotAllowed = document.getElementById('notAllowed');
+    const elLinks = document.getElementById('links');
+    const googleBtn = document.getElementById('googleBtn');
+    const signOutBtn = document.getElementById('signOutBtn');
+
+    const buildConsoleUrl = (path="overview") =>
+      `https://console.firebase.google.com/project/${PROJECT_ID}/${path}`;
+
+    const setLinks = () => {
+      document.getElementById('linkOverview').href  = buildConsoleUrl("overview");
+      document.getElementById('linkAuth').href      = buildConsoleUrl("authentication/users");
+      document.getElementById('linkFirestore').href = buildConsoleUrl("firestore/data");
+      document.getElementById('linkHosting').href   = buildConsoleUrl("hosting");
+    };
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        elState.textContent = "Status: Not signed in";
+        elLinks.style.display = "none";
+        elNotAllowed.style.display = "none";
+        return;
+      }
+      elState.textContent = `Signed in as ${user.email || user.uid}`;
+      const ok = user.email && ALLOWLIST.includes(user.email.toLowerCase());
+      if (ok) {
+        setLinks();
+        elLinks.style.display = "block";
+        elNotAllowed.style.display = "none";
+        // Auto-forward to Console after 1.2s (optional):
+        setTimeout(()=> { window.location.href = buildConsoleUrl("overview"); }, 1200);
+      } else {
+        elLinks.style.display = "none";
+        elNotAllowed.style.display = "block";
+      }
+    });
+
+    googleBtn.addEventListener('click', async () => {
+      try { await signInWithPopup(auth, provider); }
+      catch (e) { console.error("Google Sign-in error:", e?.code, e?.message || e); }
+    });
+    signOutBtn.addEventListener('click', async () => {
+      try { await signOut(auth); }
+      catch (e) { console.error("Sign-out error:", e?.code, e?.message || e); }
+    });
+  </script>
+</body>
+</html>
