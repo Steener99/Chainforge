@@ -1,0 +1,8 @@
+ChainForge Live Forge — Firebase Auth, XP progression, Relic evolution
+cd path/to/ChainForge_Live_Deployable
+git init
+git remote add origin https://github.com/<yourusername>/chainforge-live.git
+git add .
+git commit -m "Initial ChainForge live deploy"
+git branch -M main
+git push -u origin main
