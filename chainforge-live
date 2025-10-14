@@ -116,3 +116,22 @@ git push -u origin main<!doctype html>
   </script>
 </body>
 </html>
+# 0) Make sure your CLI isn’t ancient
+npm i -g firebase-tools
+
+# 1) Re-auth and pick the right project
+firebase logout
+firebase login --reauth
+firebase projects:list
+firebase use --add          # pick your actual project; alias it "default"
+
+# 2) Validate and (re)create a minimal good hosting config
+mv firebase.json firebase.json.bak 2>/dev/null || true
+firebase init hosting
+# ✔ Use an existing project → pick the same one you just selected
+# "What do you want to use as your public directory?" → public
+# "Configure as a single-page app (rewrite all urls to /index.html)?" → Yes
+# "Set up automatic builds and deploys with GitHub?" → No (for now)
+
+# 3) Deploy with debug to see the exact field if it still fails
+firebase deploy --only hosting --debug
