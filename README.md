@@ -123,4 +123,4 @@ services:
 EOF
   echo "✅ Render spec generated → render.yaml"
 fi
-![CI](https://github.com/<YOUR_ORG>/<YOUR_REPO>/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/<Breaklayer>/<ChainForge>/actions/workflows/ci.yml/badge.svg)
